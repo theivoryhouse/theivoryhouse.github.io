@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -571,7 +570,7 @@ footer a:hover {
     color: var(--white) !important;
     text-decoration: none !important;
     font-family: Arial, sans-serif !important;
-    font-size: 11px !important;
+    font-size: 0 !important;
     font-weight: 500 !important;
     letter-spacing: 0 !important;
     box-shadow: 0 5px 20px rgba(95,77,61,.25) !important;
@@ -586,6 +585,22 @@ footer a:hover {
     opacity: .85 !important;
 }
 
+.social-buttons a svg {
+    width: 25px !important;
+    height: 25px !important;
+    display: block !important;
+    fill: currentColor !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    flex-shrink: 0 !important;
+}
+
+.social-buttons a:nth-child(2) svg {
+    fill: none !important;
+    stroke: currentColor !important;
+    stroke-width: 1.7 !important;
+}
+
 @media(max-width: 800px) {
 
     .social-buttons {
@@ -598,6 +613,15 @@ footer a:hover {
 
     .social-buttons a {
         display: flex !important;
+        font-size: 0 !important;
+    }
+
+    .social-buttons a svg {
+        display: block !important;
+        width: 25px !important;
+        height: 25px !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 }
 
@@ -657,7 +681,6 @@ footer a:hover {
 
 </header>
 
-
 <!-- =========================
      HERO
 ========================= -->
@@ -695,7 +718,6 @@ footer a:hover {
 
     </div>
 
-
     <div class="hero-art">
 
         <div class="arch"></div>
@@ -709,7 +731,6 @@ footer a:hover {
     </div>
 
 </section>
-
 
 <!-- =========================
      ABOUT
@@ -739,7 +760,6 @@ footer a:hover {
 
 </section>
 
-
 <!-- =========================
      RENTALS
 ========================= -->
@@ -762,9 +782,7 @@ footer a:hover {
 
     </div>
 
-
     <div class="services-grid">
-
 
         <div class="service-card">
 
@@ -784,7 +802,6 @@ footer a:hover {
 
         </div>
 
-
         <div class="service-card">
 
             <div class="service-number">
@@ -802,7 +819,6 @@ footer a:hover {
             </p>
 
         </div>
-
 
         <div class="service-card">
 
@@ -822,7 +838,6 @@ footer a:hover {
 
         </div>
 
-
         <div class="service-card">
 
             <div class="service-number">
@@ -840,7 +855,6 @@ footer a:hover {
             </p>
 
         </div>
-
 
         <div class="service-card">
 
@@ -860,7 +874,6 @@ footer a:hover {
 
         </div>
 
-
         <div class="service-card">
 
             <div class="service-number">
@@ -879,11 +892,9 @@ footer a:hover {
 
         </div>
 
-
     </div>
 
 </section>
-
 
 <!-- =========================
      BRAND STATEMENT
@@ -916,7 +927,6 @@ footer a:hover {
 
 </section>
 
-
 <!-- =========================
      EXPERIENCE
 ========================= -->
@@ -942,7 +952,6 @@ footer a:hover {
     </p>
 
 </section>
-
 
 <!-- =========================
      CONTACT
@@ -974,7 +983,6 @@ footer a:hover {
 
 </section>
 
-
 <!-- =========================
      FOOTER
 ========================= -->
@@ -999,7 +1007,5 @@ footer a:hover {
 
 </footer>
 
-
 </body>
 </html>
-```
