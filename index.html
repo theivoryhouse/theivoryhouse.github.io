@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -456,35 +457,101 @@ section {
    FOOTER
 ========================= */
 
-footer {
-    padding: 45px 8%;
-    background: var(--brown);
-    color: var(--cream);
+.site-footer {
+    background: #f4efe7;
+    border-top: 1px solid rgba(120, 105, 85, 0.18);
+    padding: 70px 8% 25px;
+    color: #4f463c;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+.footer-brand h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin: 0 0 12px;
+}
+
+.footer-brand p {
+    margin: 0 0 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+
+.footer-brand span {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: #8a7965;
+}
+
+.footer-column h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin: 5px 0 18px;
+}
+
+.footer-column a,
+.footer-column p {
+    display: block;
+    margin: 0 0 11px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #62584d;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    color: #9b8060;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 55px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(120, 105, 85, 0.15);
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    gap: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: #8a8177;
 }
 
-.footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    letter-spacing: 4px;
-    font-size: 20px;
+.footer-bottom p {
+    margin: 0;
 }
 
-footer span {
-    font-size: 9px;
-    letter-spacing: 2px;
-}
+@media (max-width: 700px) {
+    .site-footer {
+        padding: 55px 7% 22px;
+    }
 
-footer a {
-    color: inherit;
-    text-decoration: none;
-    letter-spacing: 0.18em;
-    font-size: 0.75rem;
-}
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 25px;
+    }
 
-footer a:hover {
-    opacity: 0.6;
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        margin-top: 40px;
+        flex-direction: column;
+        gap: 8px;
+    }
 }
 
 /* =========================
@@ -987,25 +1054,98 @@ footer a:hover {
      FOOTER
 ========================= -->
 
-<footer>
+<footer class="site-footer">
 
-    <div class="footer-logo">
-        THE IVORY HOUSE
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            <h3>
+                THE IVORY HOUSE
+            </h3>
+
+            <p>
+                Detalles que transforman cada celebración.
+            </p>
+
+            <span>
+                Timeless elegance, carefully curated.
+            </span>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h4>
+                EXPLORE
+            </h4>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#services">
+                Rental Collection
+            </a>
+
+            <a href="#experience">
+                Experience
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h4>
+                CONNECT
+            </h4>
+
+            <a href="https://www.instagram.com/theivoryhousesv/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Instagram
+            </a>
+
+            <a href="https://wa.me/50373800451"
+               target="_blank"
+               rel="noopener noreferrer">
+                WhatsApp
+            </a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h4>
+                LOCATION
+            </h4>
+
+            <p>
+                El Salvador
+            </p>
+
+        </div>
+
     </div>
 
-    <span>
-        EVENT RENTALS · SAN SALVADOR · EL SALVADOR
-    </span>
+    <div class="footer-bottom">
 
-    <a href="https://www.instagram.com/theivoryhousesv/" target="_blank" rel="noopener noreferrer">
-        INSTAGRAM
-    </a>
+        <p>
+            © 2026 THE IVORY HOUSE
+        </p>
 
-    <span>
-        © 2026
-    </span>
+        <p>
+            Timeless elegance, carefully curated.
+        </p>
+
+    </div>
 
 </footer>
 
 </body>
 </html>
+```
