@@ -6,9 +6,16 @@
 
 <title>THE IVORY HOUSE | Event Rentals & Décor</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================
+   ROOT
+========================= */
 
 :root {
     --ivory: #F7F2E8;
@@ -34,11 +41,22 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background: var(--cream);
+    background: var(--ivory);
     color: var(--text);
+    font-family: "Montserrat", sans-serif;
     font-weight: 300;
+    line-height: 1.7;
 }
+
+a {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
 
 /* =========================
    HEADER
@@ -49,39 +67,44 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 28px 7%;
+    z-index: 1000;
+
+    padding: 22px 7%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
-    background: rgba(251,248,241,0.92);
+
+    background: rgba(247,242,232,.92);
     backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(95,77,61,.08);
 }
 
 .logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
-    letter-spacing: 4px;
-    color: var(--brown);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.25rem;
+    letter-spacing: .18em;
+    font-weight: 500;
 }
 
 nav {
     display: flex;
-    gap: 38px;
+    gap: 32px;
 }
 
 nav a {
     text-decoration: none;
-    color: var(--text);
-    font-size: 11px;
-    letter-spacing: 2px;
+    font-size: .72rem;
+    letter-spacing: .18em;
     text-transform: uppercase;
-    transition: 0.3s;
+    transition: .3s;
 }
 
 nav a:hover {
-    color: var(--champagne);
+    opacity: .55;
 }
+
 
 /* =========================
    HERO
@@ -89,368 +112,376 @@ nav a:hover {
 
 .hero {
     min-height: 100vh;
-    padding: 150px 8% 80px;
-    display: flex;
+
+    padding: 150px 8% 90px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
+
     position: relative;
     overflow: hidden;
-    background:
-        radial-gradient(circle at 75% 30%, rgba(201,170,120,0.16), transparent 25%),
-        linear-gradient(135deg, var(--cream), var(--ivory));
 }
 
 .hero-content {
-    width: 52%;
     position: relative;
     z-index: 2;
 }
 
-.eyebrow {
-    font-size: 11px;
-    letter-spacing: 5px;
+.hero-eyebrow {
+    font-size: .7rem;
+    letter-spacing: .3em;
     text-transform: uppercase;
     margin-bottom: 25px;
-    color: var(--mocha);
 }
 
 .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(70px, 9vw, 145px);
-    line-height: 0.78;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4.5rem, 9vw, 8.5rem);
     font-weight: 300;
-    letter-spacing: -4px;
-    color: var(--brown);
+    line-height: .8;
+    letter-spacing: -.04em;
+}
+
+.hero h1 span {
+    display: block;
 }
 
 .hero-script {
-    font-family: 'Allura', cursive;
-    font-size: clamp(70px, 9vw, 130px);
-    color: var(--champagne);
-    margin-left: 90px;
-    margin-top: -5px;
-}
-
-.tagline {
-    margin-top: 35px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 27px;
-    font-style: italic;
+    font-family: "Allura", cursive;
+    font-size: clamp(4rem, 7vw, 7rem);
     color: var(--mocha);
+    margin-left: 12%;
+    margin-top: 10px;
 }
 
 .hero-subtitle {
-    margin-top: 12px;
-    max-width: 480px;
-    line-height: 1.8;
-    font-size: 13px;
+    margin-top: 35px;
+    max-width: 520px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.35rem;
+    line-height: 1.5;
 }
 
-.hero-meta {
-    margin-top: 45px;
-    display: flex;
-    gap: 35px;
-    font-size: 10px;
-    letter-spacing: 3px;
+.hero-location {
+    margin-top: 25px;
+    font-size: .68rem;
+    letter-spacing: .25em;
     text-transform: uppercase;
 }
 
+
 /* =========================
-   ABSTRACT ARCH
+   HERO ARCH
 ========================= */
 
-.hero-art {
-    position: absolute;
-    right: 8%;
-    bottom: 7%;
-    width: 390px;
-    height: 570px;
+.hero-visual {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .arch {
-    position: absolute;
-    left: 45px;
-    top: 10px;
-    width: 300px;
-    height: 480px;
-    border-radius: 160px 160px 0 0;
+    width: 72%;
+    max-width: 430px;
+    height: 560px;
+
+    border-radius: 220px 220px 0 0;
+
     background:
         linear-gradient(
-            135deg,
-            rgba(255,255,255,.75),
-            rgba(233,221,204,.55)
+            145deg,
+            var(--beige-light),
+            var(--beige)
         );
-    box-shadow:
-        0 30px 80px rgba(95,77,61,.12);
+
+    position: relative;
 }
 
 .arch::before {
     content: "";
     position: absolute;
-    left: 18px;
-    top: 18px;
-    width: 264px;
-    height: 444px;
-    border-radius: 140px 140px 0 0;
-    border: 1px solid rgba(201,170,120,.55);
+
+    width: 72%;
+    height: 78%;
+
+    left: 14%;
+    top: 11%;
+
+    border-radius: 180px 180px 0 0;
+
+    border: 1px solid rgba(95,77,61,.15);
 }
 
-.arch-line {
-    position: absolute;
-    width: 360px;
-    height: 1px;
-    background: var(--champagne);
-    right: -25px;
-    top: 260px;
-    opacity: .6;
-}
+.arch::after {
+    content: "THE IVORY HOUSE";
 
-.circle {
     position: absolute;
-    width: 85px;
-    height: 85px;
-    border-radius: 50%;
-    background: rgba(201,170,120,.25);
-    right: 0;
-    top: 75px;
-}
-
-.floor {
-    position: absolute;
-    width: 450px;
-    height: 1px;
-    background: var(--taupe);
-    bottom: 20px;
+    bottom: 45px;
     left: 0;
-    opacity: .5;
+    width: 100%;
+
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: .9rem;
+    letter-spacing: .2em;
 }
+
 
 /* =========================
    SECTIONS
 ========================= */
 
 section {
-    padding: 130px 8%;
+    padding: 120px 8%;
 }
 
 .section-label {
-    font-size: 10px;
+    font-size: .68rem;
+    letter-spacing: .3em;
     text-transform: uppercase;
-    letter-spacing: 4px;
-    color: var(--mocha);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(48px, 6vw, 80px);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
     font-weight: 300;
-    line-height: 0.95;
-    color: var(--brown);
+    line-height: .95;
 }
 
-.script {
-    font-family: 'Allura', cursive;
-    color: var(--champagne);
-    font-size: 55px;
+.section-script {
+    font-family: "Allura", cursive;
+    color: var(--mocha);
+    font-size: 3rem;
 }
+
 
 /* =========================
    ABOUT
 ========================= */
 
 .about {
-    background: var(--white);
-    text-align: center;
+    background: var(--cream);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 100px;
+    align-items: start;
 }
 
 .about-text {
-    max-width: 720px;
-    margin: 35px auto 0;
-    line-height: 2;
-    font-size: 14px;
+    max-width: 650px;
 }
 
-.about-script {
-    margin-top: 25px;
+.about-text p {
+    margin-bottom: 24px;
+    font-size: .95rem;
 }
+
 
 /* =========================
    SERVICES
 ========================= */
 
 .services {
-    background: var(--beige-light);
+    background: var(--ivory);
 }
 
 .services-header {
-    text-align: center;
     margin-bottom: 70px;
 }
 
 .services-grid {
-    max-width: 1100px;
-    margin: auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    background: var(--taupe);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+
+    background: rgba(95,77,61,.16);
 }
 
 .service-card {
-    background: var(--cream);
-    padding: 55px 45px;
-    min-height: 250px;
-    transition: 0.4s;
+    background: var(--ivory);
+    padding: 45px 35px;
+    min-height: 260px;
+
+    transition: .35s;
 }
 
 .service-card:hover {
-    background: var(--white);
-    transform: translateY(-3px);
+    background: var(--cream);
 }
 
 .service-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 16px;
-    color: var(--champagne);
-    margin-bottom: 25px;
+    font-size: .7rem;
+    letter-spacing: .2em;
+    color: var(--taupe);
 }
 
 .service-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
+    margin-top: 35px;
+    margin-bottom: 18px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
     font-weight: 400;
-    margin-bottom: 15px;
-    color: var(--brown);
 }
 
 .service-card p {
-    font-size: 12px;
-    line-height: 1.9;
+    font-size: .85rem;
 }
 
+
 /* =========================
-   BRAND STATEMENT
+   STATEMENT
 ========================= */
 
 .statement {
-    background: var(--ivory);
-    min-height: 620px;
+    min-height: 80vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    text-align: center;
+
+    background: var(--brown);
+    color: var(--ivory);
 }
 
 .statement-inner {
-    max-width: 900px;
-    text-align: center;
+    max-width: 850px;
 }
 
-.statement-monogram {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 90px;
-    letter-spacing: 10px;
-    color: var(--champagne);
-    opacity: .65;
+.statement .section-label {
+    color: var(--beige);
 }
 
 .statement h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(45px, 6vw, 78px);
+    font-family: "Cormorant Garamond", serif;
     font-weight: 300;
-    color: var(--brown);
+
+    font-size: clamp(3rem, 7vw, 6rem);
+
+    line-height: 1;
+}
+
+.statement-script {
+    font-family: "Allura", cursive;
+    font-size: 4rem;
+    color: var(--beige);
 }
 
 .statement p {
     max-width: 650px;
-    margin: 30px auto;
-    line-height: 2;
-    font-size: 13px;
+    margin: 40px auto 0;
+    font-size: .9rem;
+    line-height: 1.9;
 }
 
-.statement-script {
-    font-size: 52px;
-}
 
 /* =========================
    EXPERIENCE
 ========================= */
 
 .experience {
-    background: var(--white);
-    text-align: center;
+    background: var(--beige-light);
 }
 
-.experience h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(55px, 7vw, 95px);
-    font-weight: 300;
-    color: var(--brown);
+.experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
 }
 
-.experience-script {
-    font-family: 'Allura', cursive;
-    font-size: 70px;
-    color: var(--champagne);
+.experience-text {
+    max-width: 600px;
 }
 
-.experience p {
-    max-width: 650px;
-    margin: 35px auto;
-    line-height: 2;
-    font-size: 13px;
+.experience-text p {
+    margin-top: 30px;
+    font-size: .95rem;
 }
+
+.experience-box {
+    min-height: 450px;
+
+    background: var(--cream);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(95,77,61,.1);
+}
+
+.experience-box span {
+    font-family: "Allura", cursive;
+    font-size: 4rem;
+    color: var(--mocha);
+}
+
 
 /* =========================
    CONTACT
 ========================= */
 
 .contact {
-    background:
-        linear-gradient(
-            135deg,
-            var(--beige-light),
-            var(--cream)
-        );
+    background: var(--cream);
     text-align: center;
 }
 
+.contact-inner {
+    max-width: 850px;
+    margin: auto;
+}
+
 .contact h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(55px, 7vw, 95px);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3rem, 7vw, 6rem);
     font-weight: 300;
-    color: var(--brown);
+    line-height: .95;
 }
 
 .contact-script {
-    font-family: 'Allura', cursive;
-    color: var(--champagne);
-    font-size: 70px;
+    font-family: "Allura", cursive;
+    color: var(--mocha);
+    font-size: 4rem;
 }
 
 .contact p {
-    max-width: 600px;
-    margin: 30px auto;
-    line-height: 2;
-    font-size: 13px;
+    max-width: 650px;
+    margin: 35px auto;
+    font-size: .9rem;
 }
 
-.button {
+.contact-button {
     display: inline-block;
-    margin-top: 20px;
-    padding: 17px 35px;
-    border: 1px solid var(--brown);
+
+    padding: 16px 34px;
+
+    background: var(--brown);
+    color: var(--ivory);
+
     text-decoration: none;
-    color: var(--brown);
-    font-size: 10px;
+
+    font-size: .7rem;
+    letter-spacing: .2em;
     text-transform: uppercase;
-    letter-spacing: 3px;
+
     transition: .3s;
 }
 
-.button:hover {
-    background: var(--brown);
-    color: var(--white);
+.contact-button:hover {
+    background: var(--mocha);
 }
+
 
 /* =========================
    FOOTER
@@ -458,23 +489,92 @@ section {
 
 footer {
     padding: 45px 8%;
+
     background: var(--brown);
-    color: var(--cream);
+    color: var(--ivory);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    letter-spacing: 4px;
-    font-size: 20px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.3rem;
+    letter-spacing: .12em;
 }
 
 footer span {
-    font-size: 9px;
-    letter-spacing: 2px;
+    font-size: .7rem;
+    letter-spacing: .18em;
 }
+
+footer a {
+    color: inherit;
+    text-decoration: none;
+
+    letter-spacing: .18em;
+    font-size: .75rem;
+}
+
+footer a:hover {
+    opacity: .6;
+}
+
+
+/* =========================
+   FLOATING CONTACT BUTTONS
+========================= */
+
+.floating-contact {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.floating-contact a {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    color: var(--ivory);
+    background: var(--brown);
+
+    box-shadow:
+        0 8px 25px rgba(95,77,61,.18);
+
+    transition: .3s ease;
+}
+
+.floating-contact a:hover {
+    transform: translateY(-3px);
+    background: var(--mocha);
+}
+
+.floating-contact svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
 
 /* =========================
    MOBILE
@@ -483,112 +583,90 @@ footer span {
 @media(max-width: 800px) {
 
     header {
-        padding: 20px;
+        padding: 18px 6%;
     }
 
     nav {
-        display: none;
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: .58rem;
+        letter-spacing: .12em;
     }
 
     .hero {
-        padding: 130px 7% 80px;
-    }
+        min-height: auto;
 
-    .hero-content {
-        width: 100%;
-    }
+        padding:
+            130px 7% 70px;
 
-    .hero-art {
-        opacity: .25;
-        right: -100px;
+        grid-template-columns: 1fr;
+
+        gap: 45px;
     }
 
     .hero h1 {
-        font-size: 70px;
+        font-size: 4.5rem;
     }
 
     .hero-script {
-        margin-left: 30px;
-        font-size: 75px;
+        font-size: 4rem;
+    }
+
+    .hero-visual {
+        height: 420px;
+    }
+
+    .arch {
+        width: 75%;
+        height: 390px;
+    }
+
+    section {
+        padding: 85px 7%;
+    }
+
+    .about-grid,
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
     }
 
     .services-grid {
         grid-template-columns: 1fr;
     }
 
-    section {
-        padding: 90px 7%;
+    .service-card {
+        min-height: auto;
+    }
+
+    .statement {
+        min-height: 65vh;
+    }
+
+    .statement h2 {
+        font-size: 3.5rem;
+    }
+
+    .statement-script {
+        font-size: 3.2rem;
+    }
+
+    .experience-box {
+        min-height: 300px;
+    }
+
+    .contact h2 {
+        font-size: 3.6rem;
     }
 
     footer {
         flex-direction: column;
-        gap: 15px;
         text-align: center;
+        padding: 38px 20px;
     }
-}
 
-footer a {
-    color: inherit;
-    text-decoration: none;
-    letter-spacing: 0.18em;
-    font-size: 0.75rem;
-}
-
-footer a:hover {
-    opacity: 0.6;
-}
-    /* =========================
-   FLOATING CONTACT BUTTONS
-========================= */
-
-.floating-contact {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    z-index: 999;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.floating-contact a {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: var(--white);
-    box-shadow: 0 8px 25px rgba(95,77,61,.18);
-    transition: .3s;
-}
-
-.floating-contact a:hover {
-    transform: translateY(-3px);
-}
-
-.floating-whatsapp {
-    background: #25D366;
-}
-
-.floating-instagram {
-    background: linear-gradient(
-        135deg,
-        #F58529,
-        #DD2A7B,
-        #8134AF,
-        #515BD4
-    );
-}
-
-.floating-contact svg {
-    width: 23px;
-    height: 23px;
-    fill: currentColor;
-}
-
-@media(max-width: 800px) {
     .floating-contact {
         right: 16px;
         bottom: 16px;
@@ -598,11 +676,19 @@ footer a:hover {
         width: 46px;
         height: 46px;
     }
+
+    .floating-contact svg {
+        width: 21px;
+        height: 21px;
+    }
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <!-- =========================
      HEADER
@@ -632,45 +718,34 @@ footer a:hover {
 
     <div class="hero-content">
 
-        <div class="eyebrow">
+        <div class="hero-eyebrow">
             Event Rentals & Décor
         </div>
 
         <h1>
-            THE IVORY
+            <span>THE IVORY</span>
+            <span class="hero-script">House</span>
         </h1>
 
-        <div class="hero-script">
-            House
-        </div>
-
-        <div class="tagline">
+        <p class="hero-subtitle">
             Creating moments that last.
-        </div>
+        </p>
 
-        <div class="hero-subtitle">
+        <p class="hero-subtitle">
             Alquiler, decoración y ambientación cuidadosamente seleccionados
             para celebraciones que merecen ser recordadas.
-        </div>
+        </p>
 
-        <div class="hero-meta">
-            <span>San Salvador</span>
-            <span>El Salvador</span>
-            <span>Est. 2026</span>
+        <div class="hero-location">
+            San Salvador · El Salvador · Est. 2026
         </div>
 
     </div>
 
 
-    <div class="hero-art">
+    <div class="hero-visual">
 
         <div class="arch"></div>
-
-        <div class="circle"></div>
-
-        <div class="arch-line"></div>
-
-        <div class="floor"></div>
 
     </div>
 
@@ -683,38 +758,54 @@ footer a:hover {
 
 <section class="about" id="about">
 
-    <div class="section-label">
-        The House
+    <div class="about-grid">
+
+        <div>
+
+            <div class="section-label">
+                The House
+            </div>
+
+            <h2 class="section-title">
+                Elegancia que comienza con los detalles.
+            </h2>
+
+            <div class="section-script">
+                Simply beautiful.
+            </div>
+
+        </div>
+
+
+        <div class="about-text">
+
+            <p>
+                The Ivory House es una propuesta de event rentals y decoración
+                creada para quienes valoran los detalles, la estética y la forma
+                en que un espacio puede transformar una celebración.
+            </p>
+
+            <p>
+                Seleccionamos mobiliario, textiles, estructuras y elementos
+                decorativos que pueden combinarse de acuerdo con el estilo y
+                esencia de cada ocasión.
+            </p>
+
+            <p>
+                Desde piezas individuales hasta una ambientación cuidadosamente
+                desarrollada, creamos espacios que se sienten elegantes,
+                armoniosos y verdaderamente tuyos.
+            </p>
+
+        </div>
+
     </div>
-
-    <h2 class="section-title">
-        Elegancia que comienza<br>
-        con los detalles.
-    </h2>
-
-    <div class="script about-script">
-        Simply beautiful.
-    </div>
-
-    <p class="about-text">
-        The Ivory House es una propuesta de event rentals y decoración
-        creada para quienes valoran los detalles, la estética y la forma
-        en que un espacio puede transformar una celebración.
-        <br><br>
-        Seleccionamos mobiliario, textiles, estructuras y elementos
-        decorativos que pueden combinarse de acuerdo con el estilo y
-        esencia de cada ocasión.
-        <br><br>
-        Desde piezas individuales hasta una ambientación cuidadosamente
-        desarrollada, creamos espacios que se sienten elegantes,
-        armoniosos y verdaderamente tuyos.
-    </p>
 
 </section>
 
 
 <!-- =========================
-     RENTALS
+     SERVICES
 ========================= -->
 
 <section class="services" id="services">
@@ -729,7 +820,7 @@ footer a:hover {
             Rentals & Décor
         </h2>
 
-        <div class="script">
+        <div class="section-script">
             For your occasion.
         </div>
 
@@ -822,9 +913,9 @@ footer a:hover {
             </h3>
 
             <p>
-                Desarrollamos propuestas decorativas a partir de tu
-                concepto, estilo y colores, seleccionando los elementos
-                que darán forma a la ambientación de tu celebración.
+                Desarrollamos propuestas decorativas a partir de tu concepto,
+                estilo y colores, seleccionando los elementos que darán forma
+                a la ambientación de tu celebración.
             </p>
 
         </div>
@@ -847,27 +938,25 @@ footer a:hover {
 
         </div>
 
-
     </div>
 
 </section>
 
 
 <!-- =========================
-     BRAND STATEMENT
+     STATEMENT
 ========================= -->
 
 <section class="statement">
 
     <div class="statement-inner">
 
-        <div class="statement-monogram">
+        <div class="section-label">
             TIH
         </div>
 
         <h2>
-            Beauty lives<br>
-            in the details.
+            Beauty lives in the details.
         </h2>
 
         <div class="statement-script">
@@ -881,6 +970,7 @@ footer a:hover {
             un espacio.
             <br><br>
             No se trata de agregar más.
+            <br>
             Se trata de elegir mejor.
         </p>
 
@@ -895,23 +985,38 @@ footer a:hover {
 
 <section class="experience" id="experience">
 
-    <div class="section-label">
-        The Experience
+    <div class="experience-grid">
+
+        <div class="experience-text">
+
+            <div class="section-label">
+                The Experience
+            </div>
+
+            <h2 class="section-title">
+                Your event.
+                <br>
+                Your vision.
+            </h2>
+
+            <p>
+                Tú eliges el concepto y nosotros ayudamos a darle forma al espacio.
+                Seleccionamos los rentals y elementos decorativos adecuados para
+                crear una ambientación que se sienta verdaderamente tuya.
+            </p>
+
+        </div>
+
+
+        <div class="experience-box">
+
+            <span>
+                Your vision.
+            </span>
+
+        </div>
+
     </div>
-
-    <h2>
-        Your event.
-    </h2>
-
-    <div class="experience-script">
-        Your vision.
-    </div>
-
-    <p>
-        Tú eliges el concepto y nosotros ayudamos a darle forma al espacio.
-        Seleccionamos los rentals y elementos decorativos adecuados para crear
-        una ambientación que se sienta verdaderamente tuya.
-    </p>
 
 </section>
 
@@ -922,27 +1027,38 @@ footer a:hover {
 
 <section class="contact" id="contact">
 
-    <div class="section-label">
-        Begin your celebration
+    <div class="contact-inner">
+
+        <div class="section-label">
+            Begin your celebration
+        </div>
+
+        <h2>
+            Your event,
+            <br>
+            our details.
+        </h2>
+
+        <div class="contact-script">
+            Let's create something beautiful.
+        </div>
+
+        <p>
+            Cuéntanos sobre tu celebración: fecha, ubicación, número de invitados
+            y lo que tienes en mente. A partir de ahí, prepararemos una propuesta
+            de acuerdo con lo que necesitas.
+        </p>
+
+        <a
+            class="contact-button"
+            href="https://wa.me/50373800451"
+            target="_blank"
+            rel="noopener"
+        >
+            Solicitar cotización
+        </a>
+
     </div>
-
-    <h2>
-        Your event,
-    </h2>
-
-    <div class="contact-script">
-        our details.
-    </div>
-
-    <p>
-        Cuéntanos sobre tu celebración: fecha, ubicación, número de invitados
-        y lo que tienes en mente. A partir de ahí, prepararemos una propuesta
-        de acuerdo con lo que necesitas.
-    </p>
-
-    <a href="https://wa.me/50373800451" class="button">
-        Solicitar cotización
-    </a>
 
 </section>
 
@@ -961,7 +1077,11 @@ footer a:hover {
         EVENT RENTALS · SAN SALVADOR · EL SALVADOR
     </span>
 
-    <a href="https://www.instagram.com/theivoryhousesv/" target="_blank">
+    <a
+        href="https://www.instagram.com/theivoryhousesv/"
+        target="_blank"
+        rel="noopener"
+    >
         INSTAGRAM
     </a>
 
@@ -971,36 +1091,56 @@ footer a:hover {
 
 </footer>
 
+
 <!-- =========================
      FLOATING CONTACT
 ========================= -->
 
 <div class="floating-contact">
 
+    <!-- WHATSAPP -->
+
     <a
         href="https://wa.me/50373800451"
         target="_blank"
         rel="noopener"
-        class="floating-whatsapp"
         aria-label="WhatsApp"
     >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
+
+        <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+        >
+
             <path d="M20.52 3.48A11.84 11.84 0 0 0 12.08 0C5.53 0 .2 5.33.2 11.88c0 2.09.55 4.13 1.6 5.93L.1 24l6.34-1.66a11.86 11.86 0 0 0 5.64 1.43h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.18-1.24-6.17-3.45-8.41ZM12.09 21.74h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.76.99 1-3.67-.23-.38a9.86 9.86 0 1 1 8.39 4.65Zm5.41-7.39c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.67-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.21 5.08 4.5.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z"/>
+
         </svg>
+
     </a>
+
+
+    <!-- INSTAGRAM -->
 
     <a
         href="https://www.instagram.com/theivoryhousesv/"
         target="_blank"
         rel="noopener"
-        class="floating-instagram"
         aria-label="Instagram"
     >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.25-2.25a1.13 1.13 0 1 1 0 2.25 1.13 1.13 0 0 1 0-2.25Z"/>
+
+        <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+        >
+
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5a5.75 5.75 0 0 1 5.75-5.75Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.25-2.25a1.13 1.13 0 1 1 0 2.25 1.13 1.13 0 0 1 0-2.25Z"/>
+
         </svg>
+
     </a>
 
 </div>
+
+
 </body>
 </html>
